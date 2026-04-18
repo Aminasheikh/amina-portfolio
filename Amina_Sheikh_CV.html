@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amina Sheikh - CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f5f5f7;
+      color: #1a1a2e;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: 800px; margin: 2rem auto;
+      background: white;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: white; padding: 2.8rem 3rem 2.4rem;
+      position: relative; overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute; top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: rgba(124,58,237,0.15);
+      border-radius: 50%;
+    }
+    .header::after {
+      content: '';
+      position: absolute; bottom: -30px; right: 100px;
+      width: 120px; height: 120px;
+      background: rgba(6,214,160,0.1);
+      border-radius: 50%;
+    }
+    .header-content { position: relative; z-index: 1; }
+    .name {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.6rem; font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .name span { color: #a78bfa; }
+    .role {
+      font-size: 0.95rem; color: #a0a0c0;
+      font-weight: 400; margin-bottom: 1.4rem;
+      letter-spacing: 0.02em;
+    }
+    .contact-row {
+      display: flex; flex-wrap: wrap; gap: 1.4rem;
+    }
+    .contact-item {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; color: #c0c0d8;
+    }
+    .contact-item a { color: #a78bfa; text-decoration: none; }
+    .dot { width: 4px; height: 4px; border-radius: 50%; background: #06d6a0; }
+
+    /* BODY */
+    .body { display: grid; grid-template-columns: 1fr 2fr; }
+
+    /* SIDEBAR */
+    .sidebar {
+      background: #f8f7ff; padding: 2.2rem 1.8rem;
+      border-right: 1px solid #ebebf5;
+    }
+    .sidebar-section { margin-bottom: 2rem; }
+    .sidebar-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: #7c3aed; margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .sidebar-title::after {
+      content: ''; flex: 1; height: 1px;
+      background: rgba(124,58,237,0.2);
+    }
+    .skill-item { margin-bottom: 0.85rem; }
+    .skill-name {
+      font-size: 0.8rem; font-weight: 500; color: #2d2d4e;
+      margin-bottom: 0.3rem;
+    }
+    .skill-bar {
+      height: 4px; background: #e5e5f0;
+      border-radius: 2px; overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%; border-radius: 2px;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-size: 0.72rem; padding: 0.2rem 0.55rem;
+      background: white; border: 1px solid #ddd8f5;
+      border-radius: 50px; color: #5b21b6;
+      font-weight: 500;
+    }
+    .info-item {
+      font-size: 0.8rem; color: #555570;
+      margin-bottom: 0.5rem; line-height: 1.5;
+    }
+    .info-item strong { color: #2d2d4e; }
+    .ai-badge {
+      background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(6,214,160,0.08));
+      border: 1px solid rgba(124,58,237,0.15);
+      border-radius: 8px; padding: 0.8rem;
+      font-size: 0.75rem; color: #555570; line-height: 1.6;
+    }
+    .ai-badge strong { color: #7c3aed; display: block; margin-bottom: 0.3rem; }
+
+    /* MAIN */
+    .main { padding: 2.2rem 2.5rem; }
+    .main-section { margin-bottom: 1.8rem; }
+    .main-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: #7c3aed; margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ebebf5;
+    }
+    .objective-text {
+      font-size: 0.86rem; color: #444460; line-height: 1.8;
+    }
+    .objective-text strong { color: #1a1a2e; }
+
+    /* Education */
+    .edu-item { margin-bottom: 1rem; }
+    .edu-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.88rem; font-weight: 700; color: #1a1a2e;
+    }
+    .edu-meta { font-size: 0.75rem; color: #7c3aed; font-weight: 600; }
+    .edu-uni { font-size: 0.8rem; color: #555570; margin-top: 0.15rem; }
+    .cgpa-badge {
+      display: inline-flex; align-items: center;
+      background: rgba(6,214,160,0.1); border: 1px solid rgba(6,214,160,0.25);
+      border-radius: 50px; padding: 0.15rem 0.6rem;
+      font-size: 0.72rem; color: #059669; font-weight: 700;
+      margin-top: 0.3rem;
+    }
+
+    /* Projects */
+    .project-item { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #f0f0f8; }
+    .project-item:last-child { border-bottom: none; }
+    .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem; }
+    .project-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem; font-weight: 700; color: #1a1a2e;
+    }
+    .project-link {
+      font-size: 0.72rem; color: #7c3aed;
+      text-decoration: none; font-weight: 500;
+    }
+    .project-desc { font-size: 0.8rem; color: #555570; line-height: 1.6; margin-bottom: 0.5rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .project-tech span {
+      font-size: 0.67rem; padding: 0.15rem 0.45rem;
+      background: #f0eeff; border-radius: 3px;
+      color: #5b21b6; font-weight: 600;
+    }
+
+    /* Print */
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; border-radius: 0; max-width: 100%; }
+    }
+
+    @media (max-width: 600px) {
+      .body { grid-template-columns: 1fr; }
+      .sidebar { border-right: none; border-bottom: 1px solid #ebebf5; }
+      .name { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-content">
+      <div class="name">Amina <span>Sheikh</span></div>
+      <div class="role">AI-Powered Web Developer &nbsp;·&nbsp; Software Engineering Student</div>
+      <div class="contact-row">
+        <div class="contact-item">
+          <span>📧</span>
+          <a href="mailto:itzamina047@gmail.com">itzamina047@gmail.com</a>
+        </div>
+        <div class="dot"></div>
+        <div class="contact-item">
+          <span>🐙</span>
+          <a href="https://github.com/aminasheikh">github.com/aminasheikh</a>
+        </div>
+        <div class="dot"></div>
+        <div class="contact-item">
+          <span>💼</span>
+        </div>
+        <div class="dot"></div>
+        <div class="contact-item">
+          <span>📍</span> Jalalpur Jattan,Gujrat, Punjab
+        </div>
+        <div class="dot"></div>
+        <div class="contact-item">
+          <span>🌐</span>
+          <a href="https://amina-sheikh.vercel.app">amina-sheikh.vercel.app</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Technical Skills -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Technical Skills</div>
+        <div>
+          <div class="skill-item">
+            <div class="skill-name">HTML5 / CSS3</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">JavaScript (ES6+)</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">React.js</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Tailwind CSS</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Node.js</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">SQL</div>
+            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Tools & Platforms</div>
+        <div class="tag-list">
+          <span class="tag">Git &amp; GitHub</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Vite</span>
+          <span class="tag">npm</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Postman</span>
+        </div>
+      </div>
+
+      <!-- AI Tools -->
+      <div class="sidebar-section">
+        <div class="ai-badge">
+          <strong>🤖 AI-Enhanced Developer</strong>
+          Skilled in using GitHub Copilot, Claude, and ChatGPT to accelerate development, write cleaner code, and solve complex problems faster.
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Education</div>
+        <div class="info-item">
+          <strong>BS Software Engineering</strong><br/>
+          University of Gujrat<br/>
+          2022 – 2026
+        </div>
+        <span class="cgpa-badge">⭐ CGPA: 3.6 / 4.0</span>
+      </div>
+
+      <!-- Languages -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Languages</div>
+        <div class="info-item"><strong>Urdu</strong> — Native</div>
+        <div class="info-item"><strong>English</strong> — Professional</div>
+        <div class="info-item"><strong>Punjabi</strong> — Native</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+      <!-- Objective -->
+      <div class="main-section">
+        <div class="main-title">Objective</div>
+        <p class="objective-text">
+          Motivated <strong>Software Engineering student</strong> (CGPA 3.6) seeking a web development internship to contribute hands-on skills in React.js, Node.js, and modern web technologies. I leverage <strong>AI tools</strong> throughout my development workflow to build faster, write cleaner code, and deliver production-quality results — making me highly productive from day one.
+        </p>
+      </div>
+
+      <!-- Projects -->
+      <div class="main-section">
+        <div class="main-title">Projects</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Quiz App</div>
+            <a href="https://github.com/aminasheikh/quiz-app" class="project-link">github.com ↗</a>
+          </div>
+          <div class="project-desc">
+            Interactive quiz application with multiple categories, score tracking, and countdown timer. Built with React hooks for state management and smooth user experience.
+          </div>
+          <div class="project-tech">
+            <span>React.js</span><span>JavaScript</span><span>CSS3</span><span>React Hooks</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Note App</div>
+            <a href="https://github.com/aminasheikh/note-app" class="project-link">github.com ↗</a>
+          </div>
+          <div class="project-desc">
+            Full-featured note-taking app with CRUD operations, search functionality, and local storage persistence. Features responsive UI built with Tailwind CSS.
+          </div>
+          <div class="project-tech">
+            <span>React.js</span><span>Tailwind CSS</span><span>LocalStorage</span><span>JavaScript</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Node Tasker</div>
+            <a href="https://github.com/aminasheikh/node-tasker" class="project-link">github.com ↗</a>
+          </div>
+          <div class="project-desc">
+            CLI task management tool built with Node.js. Supports task creation, status updates, deletion, and persistent JSON-based storage.
+          </div>
+          <div class="project-tech">
+            <span>Node.js</span><span>JavaScript</span><span>File System API</span><span>CLI</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Handle API</div>
+            <a href="https://github.com/aminasheikh/handle-api" class="project-link">github.com ↗</a>
+          </div>
+          <div class="project-desc">
+            Demonstrates REST API integration with proper async/await error handling, dynamic UI rendering from API data, and loading/error states.
+          </div>
+          <div class="project-tech">
+            <span>JavaScript</span><span>Fetch API</span><span>REST</span><span>HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <div class="project-name">Event Logger</div>
+            <a href="https://github.com/aminasheikh/event-logger" class="project-link">github.com ↗</a>
+          </div>
+          <div class="project-desc">
+            Application event logging system with timestamped records, structured JSON output, and log filtering capabilities.
+          </div>
+          <div class="project-tech">
+            <span>Node.js</span><span>JavaScript</span><span>JSON</span><span>Date API</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Coursework -->
+      <div class="main-section">
+        <div class="main-title">Relevant Coursework</div>
+        <div class="tag-list">
+          <span class="tag">Data Structures</span>
+          <span class="tag">Algorithms</span>
+          <span class="tag">Database Systems</span>
+          <span class="tag">Web Engineering</span>
+          <span class="tag">OOP</span>
+          <span class="tag">Software Design</span>
+          <span class="tag">Operating Systems</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
