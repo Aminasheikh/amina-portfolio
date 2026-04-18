@@ -41,9 +41,9 @@ export default function About() {
       maxWidth: '1100px', margin: '0 auto',
     }}>
       {/* Section header */}
-      <div style={{ marginBottom: '4rem' }}>
+      <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
         <p style={{
-          fontFamily: 'var(--font-display)', fontSize: '0.75rem',
+          fontFamily: 'var(--font-display)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)',
           fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase',
           color: 'var(--accent2)', marginBottom: '0.75rem',
         }}>
@@ -61,8 +61,8 @@ export default function About() {
       {/* Main grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '3rem',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 90vw, 300px), 1fr))',
+        gap: 'clamp(2rem, 4vw, 3rem)',
         alignItems: 'start',
       }}>
 
@@ -71,9 +71,9 @@ export default function About() {
           <div style={{
             background: 'var(--surface)',
             border: '1px solid var(--border)',
-            borderRadius: '24px',
-            padding: '2rem',
-            marginBottom: '1.5rem',
+            borderRadius: 'clamp(16px, 3vw, 24px)',
+            padding: 'clamp(1rem, 3vw, 2rem)',
+            marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
             position: 'relative',
             overflow: 'hidden',
           }}>
@@ -86,38 +86,38 @@ export default function About() {
             }} />
 
             <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              display: 'inline-flex', alignItems: 'center', gap: 'clamp(0.3rem, 1vw, 0.5rem)',
               background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(124,58,237,0.2)',
-              borderRadius: '50px', padding: '0.3rem 0.9rem',
-              fontSize: '0.72rem', fontWeight: 700, fontFamily: 'var(--font-display)',
+              borderRadius: '50px', padding: 'clamp(0.25rem, 1vw, 0.3rem) clamp(0.6rem, 2vw, 0.9rem)',
+              fontSize: 'clamp(0.65rem, 1.5vw, 0.72rem)', fontWeight: 700, fontFamily: 'var(--font-display)',
               color: 'var(--accent2)', letterSpacing: '0.06em',
-              marginBottom: '1.2rem',
+              marginBottom: 'clamp(0.8rem, 3vw, 1.2rem)',
             }}>
               <MapPin size={11} /> Jalalpur Jattan, Punjab, PK
             </div>
 
             <p style={{
               color: 'var(--text2)', lineHeight: 1.85,
-              fontSize: '0.95rem', marginBottom: '1.2rem',
+              fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', marginBottom: 'clamp(0.8rem, 2vw, 1.2rem)',
             }}>
               I'm <strong style={{ color: 'var(--text)' }}>Amina Sheikh</strong>, a final-year Software Engineering student at the University of Gujrat. I build web applications that are fast, accessible, and visually polished — from solo projects to collaborative code.
             </p>
 
             <p style={{
               color: 'var(--text2)', lineHeight: 1.85,
-              fontSize: '0.95rem',
+              fontSize: 'clamp(0.85rem, 2vw, 0.95rem)',
             }}>
               What makes me different is how I approach development: I treat <strong style={{ color: 'var(--teal)' }}>AI as a superpower</strong>. I use tools like GitHub Copilot, Claude, and ChatGPT to accelerate my workflow, write cleaner code, and solve complex problems faster — making me highly productive from day one.
             </p>
           </div>
 
           {/* Highlights */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(0.5rem, 2vw, 0.75rem)' }}>
             {highlights.map(({ icon: Icon, color, title, desc }) => (
               <div key={title} style={{
-                display: 'flex', alignItems: 'center', gap: '1rem',
+                display: 'flex', alignItems: 'center', gap: 'clamp(0.75rem, 2vw, 1rem)',
                 background: 'var(--surface)', border: '1px solid var(--border)',
-                borderRadius: '14px', padding: '1rem 1.2rem',
+                borderRadius: '14px', padding: 'clamp(0.75rem, 2vw, 1rem) clamp(0.9rem, 3vw, 1.2rem)',
                 transition: 'border-color 0.2s, transform 0.2s',
               }}
                 onMouseEnter={e => {
@@ -129,22 +129,22 @@ export default function About() {
                   e.currentTarget.style.transform = 'translateX(0)';
                 }}>
                 <div style={{
-                  width: '38px', height: '38px', flexShrink: 0,
+                  width: 'clamp(32px, 8vw, 38px)', height: 'clamp(32px, 8vw, 38px)', flexShrink: 0,
                   background: `${color}18`, border: `1px solid ${color}30`,
                   borderRadius: '10px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: color,
                 }}>
-                  <Icon size={17} />
+                  <Icon size={15} />
                 </div>
-                <div>
+                <div style={{ minWidth: 0 }}>
                   <div style={{
                     fontFamily: 'var(--font-display)', fontWeight: 700,
-                    fontSize: '0.85rem', color: 'var(--text)', marginBottom: '0.1rem',
+                    fontSize: 'clamp(0.8rem, 2vw, 0.85rem)', color: 'var(--text)', marginBottom: '0.1rem',
                   }}>
                     {title}
                   </div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text3)' }}>
+                  <div style={{ fontSize: 'clamp(0.7rem, 1.5vw, 0.78rem)', color: 'var(--text3)', lineHeight: 1.4 }}>
                     {desc}
                   </div>
                 </div>
@@ -157,16 +157,16 @@ export default function About() {
         <div>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '1rem',
-            marginBottom: '1.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(120px, 40vw, 150px), 1fr))',
+            gap: 'clamp(0.75rem, 2vw, 1rem)',
+            marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
           }}>
             {stats.map(({ value, label, sub }) => (
               <div key={label} style={{
                 background: 'var(--surface)',
                 border: '1px solid var(--border)',
-                borderRadius: '20px',
-                padding: '1.8rem 1.5rem',
+                borderRadius: 'clamp(16px, 3vw, 20px)',
+                padding: 'clamp(1rem, 2vw, 1.8rem) clamp(0.75rem, 2vw, 1.5rem)',
                 textAlign: 'center',
                 transition: 'border-color 0.3s, transform 0.3s',
               }}
@@ -180,21 +180,21 @@ export default function About() {
                 }}>
                 <div style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '2.4rem', fontWeight: 800,
+                  fontSize: 'clamp(1.8rem, 5vw, 2.4rem)', fontWeight: 800,
                   background: 'linear-gradient(135deg, var(--accent2), var(--teal))',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  lineHeight: 1, marginBottom: '0.4rem',
+                  lineHeight: 1, marginBottom: 'clamp(0.25rem, 1vw, 0.4rem)',
                 }}>
                   {value}
                 </div>
                 <div style={{
                   fontFamily: 'var(--font-display)', fontWeight: 700,
-                  fontSize: '0.85rem', color: 'var(--text)', marginBottom: '0.2rem',
+                  fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', color: 'var(--text)', marginBottom: '0.1rem',
                 }}>
                   {label}
                 </div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text3)' }}>
+                <div style={{ fontSize: 'clamp(0.65rem, 1.5vw, 0.72rem)', color: 'var(--text3)' }}>
                   {sub}
                 </div>
               </div>
@@ -205,33 +205,34 @@ export default function About() {
           <div style={{
             background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(6,214,160,0.08))',
             border: '1px solid rgba(124,58,237,0.2)',
-            borderRadius: '20px',
-            padding: '1.8rem',
+            borderRadius: 'clamp(16px, 3vw, 20px)',
+            padding: 'clamp(1rem, 3vw, 1.8rem)',
           }}>
             <div style={{
-              display: 'flex', alignItems: 'center', gap: '0.6rem',
-              marginBottom: '1rem',
+              display: 'flex', alignItems: 'center', gap: 'clamp(0.4rem, 1vw, 0.6rem)',
+              marginBottom: 'clamp(0.75rem, 2vw, 1rem)',
             }}>
               <Sparkles size={18} color="var(--accent2)" />
               <span style={{
                 fontFamily: 'var(--font-display)', fontWeight: 800,
-                fontSize: '0.9rem', color: 'var(--accent2)',
+                fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', color: 'var(--accent2)',
               }}>
                 AI-Enhanced Workflow
               </span>
             </div>
-            <p style={{ color: 'var(--text2)', fontSize: '0.85rem', lineHeight: 1.75 }}>
+            <p style={{ color: 'var(--text2)', fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', lineHeight: 1.75, marginBottom: 'clamp(0.75rem, 2vw, 1.2rem)' }}>
               I integrate AI tools throughout every stage of development — from planning and architecture to writing and debugging code. This lets me ship higher-quality work in less time, and tackle problems I wouldn't solve alone.
             </p>
             <div style={{
-              display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.2rem',
+              display: 'flex', flexWrap: 'wrap', gap: 'clamp(0.35rem, 1.5vw, 0.5rem)',
             }}>
               {['GitHub Copilot', 'Claude AI', 'ChatGPT', 'Cursor'].map(tool => (
                 <span key={tool} style={{
-                  fontSize: '0.72rem', padding: '0.25rem 0.7rem',
+                  fontSize: 'clamp(0.65rem, 1.5vw, 0.72rem)', padding: 'clamp(0.2rem, 0.8vw, 0.25rem) clamp(0.5rem, 1.5vw, 0.7rem)',
                   background: 'rgba(124,58,237,0.12)', border: '1px solid rgba(124,58,237,0.2)',
                   borderRadius: '50px', color: 'var(--accent2)',
                   fontFamily: 'var(--font-display)', fontWeight: 600,
+                  whiteSpace: 'nowrap',
                 }}>
                   {tool}
                 </span>
