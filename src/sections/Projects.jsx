@@ -28,7 +28,7 @@ const projects = [
     icon: HelpCircle,
     color: '#f472b6',
     github: 'https://github.com/aminasheikh/quiz-app',
-    live: '#',
+    live: null,
     tag: 'Frontend',
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     icon: StickyNote,
     color: '#fbbf24',
     github: 'https://github.com/aminasheikh/note-app',
-    live: '#',
+    live: null,
     tag: 'Frontend',
   },
   {
@@ -65,9 +65,9 @@ export default function Projects() {
       padding: 'clamp(2.5rem, 7vw, 7rem) max(1rem, 2vw)',
       maxWidth: '1100px', margin: '0 auto',
     }}>
-      <div style={{ marginBottom: '4rem' }}>
+      <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
         <p style={{
-          fontFamily: 'var(--font-display)', fontSize: '0.75rem',
+          fontFamily: 'var(--font-display)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)',
           fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase',
           color: 'var(--accent2)', marginBottom: '0.75rem',
         }}>
@@ -84,13 +84,13 @@ export default function Projects() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-        gap: '1.5rem',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(280px, 90vw, 320px), 1fr))',
+        gap: 'clamp(1rem, 3vw, 1.5rem)',
       }}>
         {projects.map(({ title, desc, tech, icon: Icon, color, github, live, tag }) => (
           <div key={title} style={{
             background: 'var(--surface)', border: '1px solid var(--border)',
-            borderRadius: '20px', padding: '1.8rem',
+            borderRadius: 'clamp(16px, 3vw, 20px)', padding: 'clamp(1.25rem, 4vw, 1.8rem)',
             display: 'flex', flexDirection: 'column',
             transition: 'all 0.3s ease',
             position: 'relative', overflow: 'hidden',
@@ -115,45 +115,46 @@ export default function Projects() {
             }} />
 
             {/* Top row */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.2rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'clamp(0.75rem, 3vw, 1.2rem)', gap: '0.5rem' }}>
               <div style={{
-                width: '44px', height: '44px', borderRadius: '12px',
+                width: 'clamp(36px, 8vw, 44px)', height: 'clamp(36px, 8vw, 44px)', borderRadius: '12px',
                 background: `${color}18`, border: `1px solid ${color}30`,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: color,
+                color: color, flexShrink: 0,
               }}>
-                <Icon size={20} />
+                <Icon size={18} />
               </div>
               <span style={{
-                fontSize: '0.7rem', fontWeight: 700, fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(0.6rem, 1.5vw, 0.7rem)', fontWeight: 700, fontFamily: 'var(--font-display)',
                 letterSpacing: '0.08em', textTransform: 'uppercase',
                 background: tagColors[tag]?.bg || 'var(--border)',
                 color: tagColors[tag]?.text || 'var(--text2)',
                 border: `1px solid ${tagColors[tag]?.border || 'var(--border)'}`,
-                padding: '0.2rem 0.6rem', borderRadius: '50px',
+                padding: 'clamp(0.15rem, 1vw, 0.2rem) clamp(0.4rem, 1.5vw, 0.6rem)', borderRadius: '50px',
+                whiteSpace: 'nowrap',
               }}>
                 {tag}
               </span>
             </div>
 
             <h3 style={{
-              fontFamily: 'var(--font-display)', fontSize: '1.1rem',
-              fontWeight: 700, marginBottom: '0.7rem',
+              fontFamily: 'var(--font-display)', fontSize: 'clamp(0.95rem, 3vw, 1.1rem)',
+              fontWeight: 700, marginBottom: 'clamp(0.5rem, 2vw, 0.7rem)',
             }}>
               {title}
             </h3>
             <p style={{
-              color: 'var(--text2)', fontSize: '0.88rem', lineHeight: 1.7,
-              flex: 1, marginBottom: '1.5rem',
+              color: 'var(--text2)', fontSize: 'clamp(0.8rem, 2vw, 0.88rem)', lineHeight: 1.7,
+              flex: 1, marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
             }}>
               {desc}
             </p>
 
             {/* Tech pills */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(0.3rem, 2vw, 0.4rem)', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}>
               {tech.map(t => (
                 <span key={t} style={{
-                  fontSize: '0.72rem', padding: '0.2rem 0.6rem',
+                  fontSize: 'clamp(0.65rem, 1.5vw, 0.72rem)', padding: 'clamp(0.15rem, 1vw, 0.2rem) clamp(0.4rem, 1.5vw, 0.6rem)',
                   background: 'var(--bg3)', border: '1px solid var(--border)',
                   borderRadius: '50px', color: 'var(--text3)',
                   fontFamily: 'var(--font-display)', fontWeight: 600,
@@ -164,12 +165,12 @@ export default function Projects() {
             </div>
 
             {/* Links */}
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', gap: 'clamp(0.5rem, 2vw, 0.75rem)', flexWrap: 'wrap' }}>
               <a href={github} target="_blank" rel="noreferrer" style={{
                 display: 'flex', alignItems: 'center', gap: '0.4rem',
-                fontSize: '0.82rem', fontWeight: 600, fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(0.75rem, 2vw, 0.82rem)', fontWeight: 600, fontFamily: 'var(--font-display)',
                 color: 'var(--text2)', border: '1px solid var(--border)',
-                padding: '0.4rem 0.9rem', borderRadius: '50px',
+                padding: 'clamp(0.35rem, 1.5vw, 0.4rem) clamp(0.7rem, 2vw, 0.9rem)', borderRadius: '50px',
                 transition: 'all 0.2s',
               }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--text2)'; e.currentTarget.style.color = 'var(--text)'; }}
@@ -179,14 +180,14 @@ export default function Projects() {
               {live && (
                 <a href={live} target="_blank" rel="noreferrer" style={{
                   display: 'flex', alignItems: 'center', gap: '0.4rem',
-                  fontSize: '0.82rem', fontWeight: 600, fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(0.75rem, 2vw, 0.82rem)', fontWeight: 600, fontFamily: 'var(--font-display)',
                   color: 'white', background: color,
-                  padding: '0.4rem 0.9rem', borderRadius: '50px',
+                  padding: 'clamp(0.35rem, 1.5vw, 0.4rem) clamp(0.7rem, 2vw, 0.9rem)', borderRadius: '50px',
                   transition: 'opacity 0.2s',
                 }}
                   onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
                   onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
-                  <ExternalLink size={13} /> Live Demo
+                  <ExternalLink size={13} /> Live
                 </a>
               )}
             </div>
@@ -195,13 +196,13 @@ export default function Projects() {
       </div>
 
       {/* GitHub CTA */}
-      <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+      <div style={{ textAlign: 'center', marginTop: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
         <a href="https://github.com/aminasheikh" target="_blank" rel="noreferrer"
            style={{
              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
              color: 'var(--text2)', border: '1px solid var(--border)',
-             padding: '0.75rem 2rem', borderRadius: '50px',
-             fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600,
+             padding: 'clamp(0.6rem, 2vw, 0.75rem) clamp(1.5rem, 4vw, 2rem)', borderRadius: '50px',
+             fontFamily: 'var(--font-display)', fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', fontWeight: 600,
              transition: 'all 0.2s',
            }}
            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent2)'; e.currentTarget.style.color = 'var(--accent2)'; }}
