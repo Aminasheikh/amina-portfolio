@@ -50,25 +50,29 @@ function SkillBar({ name, level, tag, color }) {
       style={{
         background: hovered ? 'var(--bg3)' : 'transparent',
         borderRadius: '10px',
-        padding: '0.75rem',
+        padding: 'clamp(0.5rem, 2vw, 0.75rem)',
         transition: 'background 0.2s',
       }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'clamp(0.35rem, 1vw, 0.5rem)', gap: '0.5rem', flexWrap: 'wrap' }}>
         <span style={{
           fontFamily: 'var(--font-display)', fontWeight: 600,
-          fontSize: '0.85rem', color: 'var(--text)',
+          fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', color: 'var(--text)',
+          minWidth: 0,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
         }}>
           {name}
         </span>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.3rem, 1vw, 0.6rem)', flexShrink: 0 }}>
           <span style={{
-            fontSize: '0.68rem', fontWeight: 700, fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(0.6rem, 1.5vw, 0.68rem)', fontWeight: 700, fontFamily: 'var(--font-display)',
             background: tc?.bg, color: tc?.text, border: `1px solid ${tc?.border}`,
-            padding: '0.15rem 0.55rem', borderRadius: '50px',
+            padding: '0.15rem clamp(0.35rem, 1vw, 0.55rem)', borderRadius: '50px',
+            whiteSpace: 'nowrap',
           }}>
             {tag}
           </span>
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text3)' }}>
+          <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.7rem, 1.5vw, 0.8rem)', fontWeight: 700, color: 'var(--text3)', whiteSpace: 'nowrap' }}>
             {level}%
           </span>
         </div>
@@ -98,9 +102,9 @@ export default function Skills() {
     }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         {/* Header */}
-        <div style={{ marginBottom: '4rem' }}>
+        <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
           <p style={{
-            fontFamily: 'var(--font-display)', fontSize: '0.75rem',
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)',
             fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase',
             color: 'var(--accent2)', marginBottom: '0.75rem',
           }}>
@@ -118,8 +122,8 @@ export default function Skills() {
         {/* Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 90vw, 300px), 1fr))',
+          gap: 'clamp(1rem, 3vw, 1.5rem)',
         }}>
           {skillGroups.map(({ category, color, skills }) => (
             <div key={category}
@@ -128,8 +132,8 @@ export default function Skills() {
               style={{
                 background: 'var(--surface)',
                 border: `1px solid ${activeGroup === category ? color : 'var(--border)'}`,
-                borderRadius: '24px',
-                padding: '2rem',
+                borderRadius: 'clamp(16px, 3vw, 24px)',
+                padding: 'clamp(1.25rem, 4vw, 2rem)',
                 transition: 'border-color 0.3s, transform 0.3s, box-shadow 0.3s',
                 transform: activeGroup === category ? 'translateY(-4px)' : 'translateY(0)',
                 boxShadow: activeGroup === category ? `0 20px 40px ${color}15` : 'none',
@@ -137,17 +141,18 @@ export default function Skills() {
               {/* Category header */}
               <div style={{
                 display: 'flex', alignItems: 'center', gap: '0.75rem',
-                marginBottom: '1.8rem', paddingBottom: '1.2rem',
+                marginBottom: 'clamp(1rem, 3vw, 1.8rem)', paddingBottom: 'clamp(0.75rem, 2vw, 1.2rem)',
                 borderBottom: `1px solid ${color}25`,
               }}>
                 <div style={{
                   width: '10px', height: '10px', borderRadius: '50%',
                   background: color,
                   boxShadow: `0 0 12px ${color}`,
+                  flexShrink: 0,
                 }} />
                 <h3 style={{
                   fontFamily: 'var(--font-display)', fontWeight: 800,
-                  fontSize: '1rem', color: 'var(--text)',
+                  fontSize: 'clamp(0.9rem, 3vw, 1rem)', color: 'var(--text)',
                   letterSpacing: '0.02em',
                 }}>
                   {category}
@@ -155,7 +160,7 @@ export default function Skills() {
               </div>
 
               {/* Skills */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(0.15rem, 1vw, 0.25rem)' }}>
                 {skills.map(skill => (
                   <SkillBar key={skill.name} {...skill} color={color} />
                 ))}
@@ -165,16 +170,16 @@ export default function Skills() {
         </div>
 
         {/* Extras — tech tags */}
-        <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <div style={{ marginTop: 'clamp(2rem, 5vw, 3rem)', textAlign: 'center' }}>
           <p style={{
-            fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 600,
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', fontWeight: 600,
             color: 'var(--text3)', letterSpacing: '0.1em', textTransform: 'uppercase',
-            marginBottom: '1.2rem',
+            marginBottom: 'clamp(0.75rem, 2vw, 1.2rem)',
           }}>
             Also familiar with
           </p>
           <div style={{
-            display: 'flex', flexWrap: 'wrap', gap: '0.6rem',
+            display: 'flex', flexWrap: 'wrap', gap: 'clamp(0.4rem, 2vw, 0.6rem)',
             justifyContent: 'center',
           }}>
             {[
@@ -183,7 +188,7 @@ export default function Skills() {
               'Responsive Design', 'CSS Animations', 'OOP',
             ].map(t => (
               <span key={t} style={{
-                fontSize: '0.78rem', padding: '0.3rem 0.85rem',
+                fontSize: 'clamp(0.7rem, 1.8vw, 0.78rem)', padding: 'clamp(0.25rem, 1vw, 0.3rem) clamp(0.6rem, 2vw, 0.85rem)',
                 background: 'var(--surface)', border: '1px solid var(--border)',
                 borderRadius: '50px', color: 'var(--text2)',
                 fontFamily: 'var(--font-display)', fontWeight: 500,
