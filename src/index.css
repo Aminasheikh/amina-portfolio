@@ -217,6 +217,11 @@ img {
     gap: 1rem !important;
   }
   
+  /* Stack About stats grid to single column on mobile */
+  .about-stats {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Ensure forms are full width */
   input,
   textarea {
