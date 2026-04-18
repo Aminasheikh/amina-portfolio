@@ -62,7 +62,7 @@ const tagColors = {
 export default function Projects() {
   return (
     <section id="projects" style={{
-      padding: '7rem 2rem',
+      padding: 'clamp(2.5rem, 7vw, 7rem) max(1rem, 2vw)',
       maxWidth: '1100px', margin: '0 auto',
     }}>
       <div style={{ marginBottom: '4rem' }}>

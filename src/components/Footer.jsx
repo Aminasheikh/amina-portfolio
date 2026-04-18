@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <footer style={{
       borderTop: '1px solid var(--border)',
-      padding: '3rem 2rem 2rem',
+      padding: 'clamp(2rem, 5vw, 3rem) max(1rem, 2vw) clamp(1.5rem, 3vw, 2rem)',
       position: 'relative',
       overflow: 'hidden',
     }}>
@@ -39,16 +39,16 @@ export default function Footer() {
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '2rem',
-          marginBottom: '2.5rem',
+          alignItems: 'start',
+          gap: 'max(1rem, 2vw)',
+          marginBottom: 'clamp(1.5rem, 5vw, 2.5rem)',
         }}>
           {/* Brand */}
           <div>
             <div style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 800,
-              fontSize: '1.5rem',
+              fontSize: 'clamp(1.2rem, 4vw, 1.5rem)',
               letterSpacing: '-0.02em',
               background: 'linear-gradient(135deg, var(--accent2) 0%, var(--teal) 100%)',
               WebkitBackgroundClip: 'text',
@@ -57,18 +57,18 @@ export default function Footer() {
             }}>
               Amina Sheikh
             </div>
-            <p style={{ color: 'var(--text3)', fontSize: '0.82rem' }}>
+            <p style={{ color: 'var(--text3)', fontSize: 'clamp(0.7rem, 2vw, 0.82rem)' }}>
               AI-Powered Web Developer · Jalalpur Jattan, PK
             </p>
           </div>
 
           {/* Nav links */}
-          <nav style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+          <nav style={{ display: 'flex', gap: 'clamp(0.75rem, 3vw, 1.5rem)', flexWrap: 'wrap' }}>
             {navLinks.map(({ label, href }) => (
               <a key={href} href={href}
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '0.82rem', fontWeight: 600,
+                  fontSize: 'clamp(0.7rem, 2vw, 0.82rem)', fontWeight: 600,
                   color: 'var(--text3)',
                   transition: 'color 0.2s',
                 }}
@@ -80,7 +80,7 @@ export default function Footer() {
           </nav>
 
           {/* Social icons */}
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', gap: 'clamp(0.5rem, 2vw, 0.75rem)' }}>
             {socialLinks.map(({ icon: Icon, href, label }) => (
               <a key={label} href={href} target="_blank" rel="noreferrer"
                 aria-label={label}
@@ -122,13 +122,13 @@ export default function Footer() {
           flexWrap: 'wrap',
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '0.75rem',
+          gap: 'clamp(0.5rem, 2vw, 0.75rem)',
         }}>
-          <p style={{ color: 'var(--text3)', fontSize: '0.78rem' }}>
+          <p style={{ color: 'var(--text3)', fontSize: 'clamp(0.7rem, 2vw, 0.78rem)' }}>
             © {year} Amina Sheikh. All rights reserved.
           </p>
           <p style={{
-            color: 'var(--text3)', fontSize: '0.78rem',
+            color: 'var(--text3)', fontSize: 'clamp(0.7rem, 2vw, 0.78rem)',
             display: 'flex', alignItems: 'center', gap: '0.3rem',
           }}>
             Built with <Heart size={12} color="var(--pink)" fill="var(--pink)" /> React & Vite

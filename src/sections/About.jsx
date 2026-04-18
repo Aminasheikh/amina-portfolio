@@ -37,7 +37,7 @@ const highlights = [
 export default function About() {
   return (
     <section id="about" style={{
-      padding: '7rem 2rem',
+      padding: 'clamp(2.5rem, 7vw, 7rem) max(1rem, 2vw)',
       maxWidth: '1100px', margin: '0 auto',
     }}>
       {/* Section header */}

@@ -32,11 +32,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    // Close mobile menu on window resize
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        padding: scrolled ? '0.9rem 2rem' : '1.4rem 2rem',
+        padding: scrolled ? '0.9rem max(1rem, 2vw)' : '1.4rem max(1rem, 2vw)',
         background: scrolled
           ? 'rgba(10,10,20,0.85)'
           : 'transparent',
@@ -44,6 +55,7 @@ export default function Navbar() {
         borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
         transition: 'all 0.35s ease',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        flexWrap: 'wrap',
       }}>
 
         {/* Logo */}
@@ -141,13 +153,15 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div style={{
+        <div className="mobile-menu" style={{
           position: 'fixed', top: '60px', left: 0, right: 0, zIndex: 99,
           background: 'rgba(10,10,20,0.97)',
           backdropFilter: 'blur(20px)',
           borderBottom: '1px solid var(--border)',
-          padding: '1rem 2rem 1.5rem',
+          padding: 'max(1rem, 2vw)',
           animation: 'fadeIn 0.2s ease',
+          overflowY: 'auto',
+          maxHeight: 'calc(100vh - 60px)',
         }}>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
             {navLinks.map(({ label, href }) => (
@@ -156,7 +170,8 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   style={{
                     fontFamily: 'var(--font-display)',
-                    fontSize: '1rem', fontWeight: 600,
+                    fontSize: 'clamp(0.9rem, 2.5vw, 1rem)', 
+                    fontWeight: 600,
                     padding: '0.7rem 1rem',
                     borderRadius: '10px',
                     color: activeLink === href ? 'var(--accent2)' : 'var(--text2)',
@@ -174,7 +189,7 @@ export default function Navbar() {
               display: 'block', marginTop: '1rem',
               textAlign: 'center',
               fontFamily: 'var(--font-display)',
-              fontSize: '0.9rem', fontWeight: 700,
+              fontSize: 'clamp(0.85rem, 2vw, 0.9rem)', fontWeight: 700,
               padding: '0.75rem',
               borderRadius: '50px',
               background: 'linear-gradient(135deg, var(--accent), #5b21b6)',

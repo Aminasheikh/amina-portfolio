@@ -93,7 +93,7 @@ export default function Skills() {
 
   return (
     <section id="skills" style={{
-      padding: '7rem 2rem',
+      padding: 'clamp(2.5rem, 7vw, 7rem) max(1rem, 2vw)',
       background: 'var(--bg2)',
     }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>

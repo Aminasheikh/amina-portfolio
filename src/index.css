@@ -149,3 +149,182 @@ img {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ─── Responsive Design ──────────────────────────────── */
+/* Mobile First - Base styles for mobile */
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  
+  .desktop-cta {
+    display: inline-block !important;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Mobile (under 768px) */
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .desktop-cta {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  body {
+    padding-top: 60px;
+  }
+  
+  /* Adjust heading sizes for mobile */
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem) !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  }
+  
+  h3 {
+    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+  }
+  
+  /* Reduce section padding on mobile */
+  section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Reduce gap in grids on mobile */
+  [style*="gridTemplateColumns"] {
+    gap: 1rem !important;
+  }
+  
+  /* Ensure forms are full width */
+  input,
+  textarea {
+    width: 100%;
+  }
+  
+  /* Adjust navbar padding on mobile */
+  nav {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  /* Fix mobile layout spacing */
+  main {
+    padding-top: 60px;
+  }
+}
+
+/* Small devices (under 480px) */
+@media (max-width: 479px) {
+  body {
+    font-size: 14px;
+  }
+  
+  section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem) !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 4vw, 2rem) !important;
+  }
+  
+  /* Stack single column layouts */
+  [style*="display: grid"],
+  [style*="display: flex"] {
+    flex-direction: column;
+  }
+  
+  /* Reduce icon sizes on very small screens */
+  svg {
+    max-width: 100%;
+  }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* ─── Additional Mobile Improvements ────────────────── */
+/* Ensure proper touch targets on mobile */
+@media (max-width: 767px) {
+  button, a, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Make text larger on very small screens for readability */
+  @media (max-width: 375px) {
+    body {
+      font-size: 15px;
+    }
+  }
+  
+  /* Stack columns properly */
+  [style*="gridTemplateColumns"],
+  [style*="flex"] {
+    width: 100%;
+  }
+  
+  /* Improve form inputs on mobile */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  /* Better spacing for buttons */
+  button {
+    padding: 12px 20px;
+  }
+}
+
+/* Improve readability on very large screens */
+@media (min-width: 1600px) {
+  body {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  section {
+    padding: 8rem 2rem;
+  }
+}
