@@ -170,7 +170,6 @@ img {
     display: none !important;
   }
 }
-
 /* Mobile (under 768px) */
 @media (max-width: 767px) {
   .desktop-nav {
@@ -217,7 +216,7 @@ img {
     gap: 1rem !important;
   }
   
-  /* Stack About stats grid to single column on mobile */
+*  /* Stack About stats grid to single column on mobile */
   .about-stats {
     grid-template-columns: 1fr !important;
   }
