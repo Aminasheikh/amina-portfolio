@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Terminal, BookOpen, Globe, Users, Music } from 'lucide-react';
+import { ExternalLink, Github, Terminal, BookOpen, Globe, Users, MapPin } from 'lucide-react';
 
 const projects = [
   {
@@ -12,14 +12,14 @@ const projects = [
     tag: 'Full Stack',
   },
   {
-    title: 'Music Player',
-    desc: 'A full-stack music player application with user authentication using JWT, playlist management, search, and categorisation features. Built during internship at Rhombix Technologies.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'JWT', 'JavaScript'],
-    icon: Music,
+    title: 'Wanderlux Travel',
+    desc: 'A modern travel website with destination discovery, trip planning features, and an elegant UI. Showcases responsive design with smooth animations and interactive destination cards.',
+    tech: ['React.js', 'JavaScript', 'CSS3', 'HTML5'],
+    icon: MapPin,
     color: '#f472b6',
-    github: 'https://github.com/Aminasheikh/music-player',
+    github: 'https://github.com/Aminasheikh/wanderlux-travel',
     live: null,
-    tag: 'Full Stack',
+    tag: 'Frontend',
   },
   {
     title: 'Node Tasker',
