@@ -112,7 +112,7 @@ export default function Navbar() {
         </ul>
 
         {/* CTA button */}
-        <a href="/Amina_Sheikh_CV.html" target="_blank" rel="noreferrer"
+        <a href="/Amina_Sheikh_CV.pdf" download="Amina_Sheikh_CV.pdf"
           style={{
             fontFamily: 'var(--font-display)',
             fontSize: '0.8rem', fontWeight: 700,
@@ -184,7 +184,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <a href="/Amina_Sheikh_CV.html" target="_blank" rel="noreferrer"
+          <a href="/Amina_Sheikh_CV.pdf" download="Amina_Sheikh_CV.pdf"
             style={{
               display: 'block', marginTop: '1rem',
               textAlign: 'center',
