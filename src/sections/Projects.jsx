@@ -13,13 +13,13 @@ const projects = [
   },
   {
     title: 'Wanderlux Travel',
-    desc: 'A modern travel website with destination discovery, trip planning features, and an elegant UI. Showcases responsive design with smooth animations and interactive destination cards.',
-    tech: ['React.js', 'JavaScript', 'CSS3', 'HTML5'],
+    desc: 'A full-stack travel booking platform with destination browsing, trip planning, and booking management. Built with Next.js and Supabase for real-time data and user authentication.',
+    tech: ['Next.js', 'Supabase', 'JavaScript', 'CSS3'],
     icon: MapPin,
     color: '#f472b6',
     github: 'https://github.com/Aminasheikh/wanderlux-travel',
     live: null,
-    tag: 'Frontend',
+    tag: 'Full Stack',
   },
   {
     title: 'Node Tasker',
